@@ -19,7 +19,8 @@ if len(sys.argv) == 5:
         findmeans = str(sys.argv[4])
         print "finding mean signal per bp position!" 
 else:
-        print "finding raw read counts per bp for each interval!"
+	findmeans = "NoMeans"
+	print "finding raw read counts per bp for each interval!"
 
 
 if shiftsize == 0:
@@ -129,7 +130,7 @@ def FindColMeans():
 	data = genfromtxt('out3.bed')
 	data = data[:,4:]
 	means = data.mean(axis=0)
-	print('\t'.join(map(str,means)) + '\n')
+	# print('\t'.join(map(str,means)) + '\n')
 	MeansFile.write(counts + '\t' + '\t'.join(map(str,means)) + '\n')
 	MeansFile.close()
 
