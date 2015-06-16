@@ -7,7 +7,7 @@ import sys
 import subprocess
 from numpy import *
 
-if len(sys.argv) !>= 4:
+if len(sys.argv) < 4:
 	print Usage
 	sys.exit()
 
