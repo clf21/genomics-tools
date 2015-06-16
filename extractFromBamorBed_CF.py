@@ -15,6 +15,12 @@ targets = str(sys.argv[1])
 counts = str(sys.argv[2])
 shiftsize = int(sys.argv[3])
 findmeans = str(sys.argv[4])
+if len(sys.argv) == 5:
+        findmeans = str(sys.argv[4])
+        print "finding mean signal per bp position!" 
+else:
+        print "finding raw read counts per bp for each interval!"
+
 
 if shiftsize == 0:
 	print "shiftsize set to zero, proceeding to extract scores..."
